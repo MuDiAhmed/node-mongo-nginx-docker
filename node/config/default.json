@@ -1,0 +1,33 @@
+{
+  "PORT": 4000,
+  "API_DOCS": {
+    "DIR": "apidoc",
+    "URL": "/apidoc"
+  },
+  "APP_DEBUG": {
+    "SERVER": "APP:SERVER",
+    "API": "APP:API"
+  },
+  "LOG": {
+    "DIR": "log",
+    "ALL": "access.log",
+    "ERROR": "error.log"
+  },
+  "DB_MONGOOSE_CONFIG": {
+    "AUTO_INDEX": true,
+    "AUTO_CREATE": true,
+    "NEW_URL_PARSER": true,
+    "UNIFIED_TOPOLOGY": true,
+    "CREATE_INDEX": true,
+    "BUFFER_COMMANDS": true,
+    "KEEP_ALIVE": true
+  },
+  "DB_CONNECTION": {
+    "URL": "localhost:27017/mosh_udemy"
+  },
+  "MODELS": {
+    "POSTS": "Post",
+    "COMMENTS": "Comment",
+    "USERS": "User"
+  }
+}

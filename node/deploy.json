@@ -1,0 +1,10 @@
+{
+  "apps": [
+    {
+      "name": "app",
+      "script": "./index.js",
+      "error_file": "./log/pm-error.log",
+      "out_file": "./log/pm-out.log"
+    }
+  ]
+}

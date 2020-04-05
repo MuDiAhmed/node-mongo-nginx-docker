@@ -1,0 +1,66 @@
+version: "3"
+services:
+  node-1:
+    container_name: node-1
+    restart: always
+    build: ./node
+    depends_on:
+      - mongo-1
+    networks:
+      - backend-network
+      - frontend-network
+  node-2:
+    container_name: node-2
+    restart: always
+    build: ./node
+    depends_on:
+      - mongo-1
+    networks:
+      - backend-network
+      - frontend-network
+  mongo-1:
+    container_name: mongo-1
+    restart: always
+    build: ./mongo
+    depends_on:
+      - mongo-2
+    networks:
+      - backend-network
+    volumes:
+      - ./mongo/data/node-1:/data/db
+  mongo-2:
+    container_name: mongo-2
+    restart: always
+    image: mongo
+    volumes:
+      - ./mongo/data/node-2:/data/db
+    depends_on:
+      - mongo-3
+    networks:
+      - backend-network
+    command: --replSet mongo-cluster
+  mongo-3:
+    container_name: mongo-3
+    restart: always
+    image: mongo
+    networks:
+      - backend-network
+    volumes:
+      - ./mongo/data/node-3:/data/db
+    command: --replSet mongo-cluster
+  nginx:
+    container_name: nginx
+    restart: always
+    build: ./nginx
+    ports:
+      - "8080:80"
+    depends_on:
+      - node-1
+      - node-2
+    networks:
+      - frontend-network
+    volumes:
+      - ./nginx/log:/var/log/nginx
+networks:
+  backend-network:
+  frontend-network:

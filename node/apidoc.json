@@ -1,0 +1,11 @@
+{
+  "name": "Project Docs",
+  "version": "0.1.0",
+  "description": "apiDoc",
+  "title": "Custom apiDoc browser title",
+  "url": "http://localhost:4300/v1",
+  "sampleUrl": "http://localhost:4300/api",
+  "template": {
+    "withGenerator": false
+  }
+}

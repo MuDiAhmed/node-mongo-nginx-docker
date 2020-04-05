@@ -1,0 +1,27 @@
+{
+  "name": "mosh_udemy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "DEBUG=APP:*,express:* DB_URL=mongo-node-1:30001,mongo-node-2:30002,mongo-node-3:30003/?replicaSet=mongo-cluster npx pm2-dev start index.js",
+    "start": "npm run dev"
+  },
+  "author": "Mohamed Youssef",
+  "license": "ISC",
+  "dependencies": {
+    "@hapi/joi": "^16.1.8",
+    "apidoc": "^0.20.1",
+    "config": "^3.2.4",
+    "debug": "^4.1.1",
+    "express": "^4.17.1",
+    "helmet": "^3.21.2",
+    "lodash": "^4.17.15",
+    "mongoose": "^5.8.6",
+    "morgan": "^1.9.1",
+    "pm2": "^4.2.3",
+    "pug": "^2.0.4",
+    "rotating-file-stream": "^2.0.1"
+  }
+}

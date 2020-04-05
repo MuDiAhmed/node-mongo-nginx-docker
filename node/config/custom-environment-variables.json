@@ -1,0 +1,5 @@
+{
+  "ENV_PORT": "PORT",
+  "ENV_DB_URL": "DB_URL",
+  "API_DOC_DIR": "API_DOC_DIR"
+}
